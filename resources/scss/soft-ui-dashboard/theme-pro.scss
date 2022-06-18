@@ -1,0 +1,45 @@
+/*!
+
+=========================================================
+* site.product_name - vsite.current_version
+=========================================================
+
+* Product Page: site.link_tim
+* Copyright site.year Creative Tim (https://www.creative-tim.com)
+
+* Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
+// {{ site.product.name }} Core styling components
+
+@import "theme";
+
+// Mixin
+@import "mixins/mixins-extend";
+
+// PRO Components
+@import "accordion";
+@import "popovers";
+@import "progress";
+@import "tooltips";
+@import "backgrounds";
+@import "dropdown-extend";
+@import "components";
+@import "cards-extend";
+@import "floating-elements";
+@import "list-check";
+@import "misc-extend";
+@import "social-buttons";
+@import "timeline/timeline";
+@import "navbar-vertical";
+
+// Plugins
+@import "vendor/leaflet";
+@import "vendor/multi-step";
+@import "vendor/plugins";
+@import "vendor/plugins-extend";

@@ -1,0 +1,13 @@
+*
+!app
+!public/
+!avatars/
+!public/avatars/team-1.jpg
+!public/avatars/team-2.jpg
+!public/avatars/team-3.jpg
+
+!items/
+!public/items/home-decor-1.jpg
+!public/items/home-decor-2.jpg
+!public/items/jordan.jpg
+!.gitignore

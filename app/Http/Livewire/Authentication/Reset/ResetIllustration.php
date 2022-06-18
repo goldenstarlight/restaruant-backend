@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Http\Livewire\Authentication\Reset;
+
+use Livewire\Component;
+
+class ResetIllustration extends Component
+{
+    public function render()
+    {
+        // return view('livewire.authentication.reset.reset-illustration');
+        return view('livewire.portal.reset');
+    }
+}

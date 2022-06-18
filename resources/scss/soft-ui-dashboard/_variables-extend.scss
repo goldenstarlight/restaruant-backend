@@ -1,0 +1,21 @@
+// Core Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+@import "../variables";
+@import "../utilities";
+
+
+// Extra Variables
+
+@import "variables/badge";
+@import "variables/cards-extend";
+@import "variables/choices";
+@import "variables/misc-extend";
+@import "variables/social-buttons";
+@import "variables/utilities-extend";
+@import "variables/dropdowns-extend";
+@import "variables/timeline";
+@import "variables/navbar-vertical";
+@import "variables/full-calendar";

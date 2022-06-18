@@ -1,0 +1,275 @@
+//
+// Vertical navbar + Sidenav
+//
+
+.navbar-vertical {
+  .navbar-nav .nav-link[data-bs-toggle="collapse"] {
+      &:after {
+          display: inline-block;
+          font-style: normal;
+          font-variant: normal;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 700;
+          content: "\f107";
+          margin-left: auto;
+          color: rgba($dark-gradient-state,0.5);
+          @include transition($transition-base);
+      }
+
+      // Expanded
+      &[aria-expanded="true"] {
+          &:after {
+              color: $dark-gradient-state;
+              transform: rotate(180deg);
+          }
+      }
+  }
+
+  .navbar-nav {
+    .nav-item{
+      .collapse,
+      .collapsing{
+        .nav{
+          @include transition($transition-base);
+          .nav-item{
+            .nav-link{
+              position: relative;
+              background-color: transparent;
+              box-shadow: none;
+              color: rgba($dark-gradient-state,0.5);
+              margin-left: $navbar-vertical-collapse-margin-left;
+              &:before{
+                content: "";
+                position: absolute;
+                left: $navbar-vertical-collapse-left;
+                top: $navbar-vertical-collapse-top;
+                transform: $navbar-vertical-collapse-translate;
+                height: $navbar-vertical-collapse-dot-size;
+                width: $navbar-vertical-collapse-dot-size;
+                border-radius: $border-radius-2xl;
+                background: rgba($dark-gradient-state, 0.5);
+              }
+              &.active{
+                color: $dark-gradient-state;
+                &:before{
+                  height: $navbar-vertical-collapse-dot-size-active;
+                  width: $navbar-vertical-collapse-dot-size-active;
+                  background: $dark-gradient-state;
+                }
+              }
+            }
+            &.active{
+              .nav-link{
+                color: $dark-gradient-state;
+                &:before{
+                  height: $navbar-vertical-collapse-dot-size-active;
+                  width: $navbar-vertical-collapse-dot-size-active;
+                  background: $dark-gradient-state;
+                }
+              }
+            }
+            // Third level
+            .nav-item{
+              .nav-link{
+                &:before{
+                  content: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.blur{
+    .navbar-nav>.nav-item {
+      .nav-link{
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+
+// Styles for minimized sidenav
+
+.navbar-vertical{
+  .navbar-brand{
+    .navbar-brand-img,
+    span{
+      @include transition($transition-base);
+    }
+  }
+  .nav-item{
+    .nav-link{
+      span.sidenav-mini-icon{
+        @include transition($transition-base);
+        text-align: center;
+        width: 0;
+      }
+    }
+  }
+  .docs-info{
+    @include transition($transition-base);
+  }
+}
+
+.g-sidenav-pinned{
+  .navbar-vertical{
+    .nav-item{
+      .nav-link{
+        span.sidenav-mini-icon{
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-up(xl) {
+  .navbar-vertical{
+    .navbar-nav{
+      .nav-item {
+        .nav-link {
+          .icon{
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+  .g-sidenav-hidden{
+    .navbar-vertical{
+      max-width: $navbar-vertical-hidden-width !important;
+      &.fixed-start + .main-content {
+        margin-left: $navbar-vertical-hidden-width + 1.5;
+      }
+      .navbar-brand{
+        img{
+          width: auto !important;
+        }
+        span{
+          opacity: 0;
+        }
+      }
+      .nav-item{
+        .nav-link{
+          .icon{
+            padding: 10px;
+          }
+          .nav-link-text,
+          .sidenav-normal{
+            opacity: 0;
+            width: 0;
+          }
+          .sidenav-mini-icon{
+            min-width: $navbar-icon-min-width;
+          }
+          &[data-bs-toggle="collapse"]:after{
+            content: "";
+          }
+        }
+        .collapse{
+          .nav{
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+            .nav-item{
+              .nav-link{
+                margin-left: $navbar-vertical-nav-link-padding-x;
+                &:before{
+                  content: none;
+                }
+                &[data-bs-toggle="collapse"]:after{
+                  content: "\f107";
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .card.card-background{
+        .icon-shape{
+          margin-bottom: 0 !important;
+        }
+        .docs-info{
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+      }
+
+      // Hover style on sidenav minimized
+      &:hover{
+        max-width: $navbar-vertical-open-width !important;
+        &.fixed-start + .main-content {
+          margin-left: $navbar-vertical-open-width + 1.5;
+        }
+        .navbar-brand{
+          span{
+            opacity: 1;
+          }
+        }
+        .nav-item{
+          .nav-link{
+            .nav-link-text,
+            .sidenav-normal{
+              opacity: 1;
+              width: auto;
+            }
+            .sidenav-mini-icon{
+              opacity: 0;
+              width: 0;
+              min-width: 0;
+            }
+            &[data-bs-toggle="collapse"]:after{
+              content: "\f107";
+            }
+          }
+          .collapse{
+            .nav{
+              margin-left: 1.5rem !important;
+              padding-left: 1rem !important;
+              .nav-item{
+                .nav-link{
+                  margin-left: $navbar-vertical-collapse-margin-left;
+                  &:before{
+                    content: "";
+                  }
+                }
+                .collapse,
+                .collapsing{
+                  .nav{
+                    margin-left:0 !important;
+                    padding-left:0 !important;
+                    .nav-item{
+                      .nav-link{
+                        &:before{
+                          content: none;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .card.card-background{
+          .icon-shape{
+            margin-bottom: 1rem !important;
+          }
+          .docs-info{
+            opacity: 1;
+            width: auto;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

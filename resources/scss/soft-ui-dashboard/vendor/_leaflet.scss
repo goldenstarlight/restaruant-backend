@@ -1,0 +1,13 @@
+.leaflet {
+  height: 250px;
+}
+
+.leaflet-bar a, .leaflet-bar a:hover{
+  background: $dark;
+  color: rgba($white, 0.7);
+  border-bottom-color: $dark-gradient;
+}
+
+.leaflet-bar a.leaflet-disabled{
+  background: $dark-gradient;
+}
