@@ -97,6 +97,7 @@ use App\Http\Livewire\Portal\Users as PortalUsers;
 use App\Http\Livewire\Portal\Notifications as PortalNotifications;
 use App\Http\Livewire\Portal\Login as PortalLogin;
 use App\Http\Livewire\Portal\Statement as PortalStatement;
+use App\Http\Livewire\Portal\Restaurants;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -123,6 +124,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/portal-users', [PortalUsers::class, 'store'])->name('add-user');
     Route::put('/portal-users/{id}', [PortalUsers::class, 'update'])->name('update-user');
     Route::delete('/portal-users/{id}', [PortalUsers::class, 'delete'])->name('delete-user');
+
+    Route::get('/restaurants/{id?}/{type?}', Restaurants::class)->name('restaurants');
+    Route::post('/restaurant', [Restaurants::class, 'store'])->name('add-restaurant');
+    Route::put('/restaurant/{id}', [Restaurants::class, 'update'])->name('update-restaurant');
+    Route::delete('/restaurant/{id}', [Restaurants::class, 'delete'])->name('delete-restaurant');
+
     Route::get('/portal-notifications', PortalNotifications::class)->name('portal-notifications');
     Route::get('/portal-statement', PortalStatement::class)->name('portal-statement');
 

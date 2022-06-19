@@ -52,8 +52,15 @@
                         <li class="nav-item {{ Route::currentRouteName() == 'portal-users' ? 'active' : '' }}">
                             <a class="nav-link {{ Route::currentRouteName() == 'portal-users' ? 'active' : '' }}"
                                 href="{{ route('portal-users') }}">
-                                <span class="sidenav-mini-icon"> O </span>
-                                <span class="sidenav-normal"> users </span>
+                                <span class="sidenav-mini-icon"> U </span>
+                                <span class="sidenav-normal"> Users </span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Route::currentRouteName() == 'restaurants' ? 'active' : '' }}">
+                            <a class="nav-link {{ Route::currentRouteName() == 'restaurants' ? 'active' : '' }}"
+                                href="{{ route('restaurants') }}">
+                                <span class="sidenav-mini-icon"> U </span>
+                                <span class="sidenav-normal"> Restaurants </span>
                             </a>
                         </li>
                         <li class="nav-item {{ Route::currentRouteName() == 'portal-statement' ? 'active' : '' }}">
