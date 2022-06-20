@@ -99,7 +99,7 @@
     const dataTableSearch = new simpleDatatables.DataTable("#users-list", {
       searchable: true,
       fixedHeight: false,
-      perPage: 7
+      perPage: 5
     });
 
     document.querySelectorAll(".export").forEach(function(el) {

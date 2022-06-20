@@ -63,6 +63,13 @@
                                 <span class="sidenav-normal"> Restaurants </span>
                             </a>
                         </li>
+                        <li class="nav-item {{ Route::currentRouteName() == 'projects' ? 'active' : '' }}">
+                            <a class="nav-link {{ Route::currentRouteName() == 'projects' ? 'active' : '' }}"
+                                href="{{ route('projects') }}">
+                                <span class="sidenav-mini-icon"> U </span>
+                                <span class="sidenav-normal"> Foods </span>
+                            </a>
+                        </li>
                         <li class="nav-item {{ Route::currentRouteName() == 'portal-statement' ? 'active' : '' }}">
                             <a class="nav-link {{ Route::currentRouteName() == 'portal-statement' ? 'active' : '' }}"
                                 href="{{ route('portal-statement') }}">

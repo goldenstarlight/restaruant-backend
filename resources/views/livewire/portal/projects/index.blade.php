@@ -7,7 +7,7 @@
                         <div class="card-body p-3">
                             <div class="row align-items-center mb-3">
                                 <div class="col-6 text-start">
-                                    <a href="{{route('restaurants', 'add')}}" class="btn bg-gradient-primary">+New Restaurants</a>
+                                    <a href="{{route('projects', 'add')}}" class="btn bg-gradient-primary">+New Food </a>
                                 </div>
                                 <div class="col-6 text-end">
                                     <div class="dropstart">
@@ -37,47 +37,53 @@
                                             No
                                         </th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Imag
+                                            Image
                                         </th> 
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                              Name
                                         </th> 
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Main food
+                                            Cost
                                         </th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Address
+                                            Type
                                         </th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Phone
+                                            Detail
                                         </th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Owner
+                                            Calories
+                                        </th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Ingredient
+                                        </th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Restaurant
                                         </th>
                                         <th colspan="2">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php $i = 1; @endphp
-                                    @foreach($restaurants as $restaurant)
-                                        @if(Auth::user()->id == $restaurant->user_id)
-                                            @continue;
-                                        @endif
+                                    @foreach($projects as $project)
                                         <tr>
-                                            <td>{{$i++}}</td>
-                                            <td><img src="{{$restaurant->logo}}"} style="width:100px"/></td>
-                                            <td>{{$restaurant->name}}</td>
-                                            <td>{{$restaurant->main_food}}</td>
-                                            <td>{{$restaurant->address}}</td>
-                                            <td>{{$restaurant->phone}}</td>
-                                            <td>{{$restaurant->user->first_name . ' ' . $restaurant->user->first_name}}</td>
+                                            <td>{{$loop->index}}</td>
                                             <td>
-                                                <a href="{{route('restaurants', [$restaurant->id, 'edit'])}}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit Restaurant">
+                                                <img src="{{$project->img_src}}" alt="" style="width:50px">
+                                            </td>
+                                            <td>{{$project->name}}</td>
+                                            <td>{{$project->cost}}</td>
+                                            <td>{{$project->type}}</td>
+                                            <td>{{$project->detail}}</td>
+                                            <td>{{$project->calories}}</td>
+                                            <td>{{$project->ingredient}}</td>
+                                            <td>{{$project->restaurant->name}}</td>
+                                            <td>
+                                                <a href="{{route('projects', [$project->id, 'edit'])}}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit Food">
                                                     <i class="fas fa-user-edit text-secondary" aria-hidden="true"></i>
                                                 </a>
                                             </td>
                                             <td>
-                                                <form action="{{route('delete-restaurant',  $restaurant->id)}}" method="post">
+                                                <form action="{{route('delete-project',  $project->id)}}" method="post">
                                                     @csrf
                                                     @method('DELETE')        
                                                     <button href="" class="mx-3 border-0" data-bs-toggle="tooltip" data-bs-original-title="Delete user">
@@ -85,9 +91,8 @@
                                                     </button>
                                                 </form>
                                             </td>
-                                        </tr> 
+                                        <tr>
                                     @endforeach
-
                                 </tbody>
                             </table>
                             </div>

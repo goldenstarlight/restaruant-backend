@@ -7,7 +7,7 @@
                     <p>Input restaurant info</p>
                 </div>
                 <div class="card-body pb-3">
-                    <form action="{{route('add-restaurant')}}" method="POST" enctype="multipart/form-data">>
+                    <form action="{{route('add-restaurant')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <label>Name</label>
                         <div class="mb-3">
