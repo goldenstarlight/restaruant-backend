@@ -1,33 +1,5 @@
 <div class="container-fluid py-4">
-    <div class="d-flex justify-content-between">
-        <div>
-            <a href="javascript:;" class="btn btn-icon bg-gradient-primary">
-                New order
-            </a>
-        </div>
-        <div class="">
-            <div class="dropdown d-inline">
-                <a href="#" class="btn btn-outline-dark dropdown-toggle " data-bs-toggle="dropdown"
-                    id="navbarDropdownMenuLink2">
-                    Filters
-                </a>
-                <ul class="dropdown-menu dropdown-menu-lg-start px-2 py-3" aria-labelledby="navbarDropdownMenuLink2"
-                    data-popper-placement="left-start">
-                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Status: Paid</a></li>
-                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Status: Refunded</a></li>
-                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Status: Canceled</a></li>
-                    <li>
-                        <hr class="horizontal dark my-2">
-                    </li>
-                    <li><a class="dropdown-item border-radius-md text-danger" href="javascript:;">Remove Filter</a></li>
-                </ul>
-            </div>
-            <button class="btn btn-icon btn-outline-dark ms-2 export" data-type="csv" type="button">
-                <span class="btn-inner--icon"><i class="ni ni-archive-2"></i></span>
-                <span class="btn-inner--text">Export CSV</span>
-            </button>
-        </div>
-    </div>
+   
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -39,115 +11,12 @@
                                 <th>Date</th>
                                 <th>Status</th>
                                 <th>Customer</th>
-                                <th>Product</th>
+                                <th>Food</th>
                                 <th>Revenue</th>
+                                <th colspan="3">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="customCheck2">
-                                        </div>
-                                        <p class="text-xs font-weight-bold ms-2 mb-0">#10421</p>
-                                    </div>
-                                </td>
-                                <td class="font-weight-bold">
-                                    <span class="my-2 text-xs">1 Nov, 10:20 AM</span>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <div class="d-flex align-items-center">
-                                        <button
-                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"><i
-                                                class="fas fa-check" aria-hidden="true"></i></button>
-                                        <span>Paid</span>
-                                    </div>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <div class="d-flex align-items-center">
-                                        <img src="../../../assets/img/team-2.jpg" class="avatar avatar-xs me-2">
-                                        <span>Orlando Imieto</span>
-                                    </div>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <span class="my-2 text-xs">Nike Sport V2</span>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <span class="my-2 text-xs">$140.20</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="form-check pt-0">
-                                            <input class="form-check-input" type="checkbox" id="customCheck2">
-                                        </div>
-                                        <p class="text-xs font-weight-bold ms-2 mb-0">#10422</p>
-                                    </div>
-                                </td>
-                                <td class="font-weight-bold">
-                                    <span class="my-2 text-xs">1 Nov, 10:53 AM</span>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <div class="d-flex align-items-center">
-                                        <button
-                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"><i
-                                                class="fas fa-check" aria-hidden="true"></i></button>
-                                        <span>Paid</span>
-                                    </div>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <div class="d-flex align-items-center">
-                                        <img src="../../../assets/img/team-1.jpg" class="avatar avatar-xs me-2">
-                                        <span>Alice Murinho</span>
-                                    </div>
-                                </td>
-                                <td class="font-weight-bold">
-                                    <span class="my-2 text-xs">Valvet T-shirt</span>
-                                </td>
-                                <td class="font-weight-bold">
-                                    <span class="my-2 text-xs">$42.00</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="customCheck2">
-                                        </div>
-                                        <p class="text-xs font-weight-bold ms-2 mb-0">#10423</p>
-                                    </div>
-                                </td>
-                                <td class="font-weight-bold">
-                                    <span class="my-2 text-xs">1 Nov, 11:13 AM</span>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <div class="d-flex align-items-center">
-                                        <button
-                                            class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"><i
-                                                class="fas fa-undo" aria-hidden="true"></i></button>
-                                        <span>Refunded</span>
-                                    </div>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <div class="d-flex align-items-center">
-                                        <div class="avatar avatar-xs me-2 bg-gradient-dark">
-                                            <span>M</span>
-                                        </div>
-                                        <span>Michael Mirra</span>
-                                    </div>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <span class="my-2 text-xs">
-                                        Leather Wallet
-                                        <span class="text-secondary ms-2"> +1 more </span>
-                                    </span>
-                                </td>
-                                <td class="text-xs font-weight-bold">
-                                    <span class="my-2 text-xs">$25.50</span>
-                                </td>
-                            </tr>
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -183,6 +52,15 @@
                                 </td>
                                 <td class="text-xs font-weight-bold">
                                     <span class="my-2 text-xs">$19.40</span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-info btn-sm">Pending</button> 
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm">Complete</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -222,6 +100,15 @@
                                 <td class="text-xs font-weight-bold">
                                     <span class="my-2 text-xs">$44.90</span>
                                 </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-info btn-sm">Pending</button> 
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm">Complete</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">Cancel</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -258,6 +145,15 @@
                                 </td>
                                 <td class="text-xs font-weight-bold">
                                     <span class="my-2 text-xs">$112.50</span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-info btn-sm">Pending</button> 
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm">Complete</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -296,6 +192,15 @@
                                 <td class="text-xs font-weight-bold">
                                     <span class="my-2 text-xs">$200.00</span>
                                 </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-info btn-sm">Pending</button> 
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm">Complete</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">Cancel</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -333,6 +238,15 @@
                                 <td class="text-xs font-weight-bold">
                                     <span class="my-2 text-xs">$350.00</span>
                                 </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-info btn-sm">Pending</button> 
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm">Complete</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">Cancel</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -369,6 +283,15 @@
                                 </td>
                                 <td class="text-xs font-weight-bold">
                                     <span class="my-2 text-xs">$15.00</span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-info btn-sm">Pending</button> 
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm">Complete</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -409,6 +332,15 @@
                                 <td class="text-xs font-weight-bold">
                                     <span class="my-2 text-xs">$25.00</span>
                                 </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-info btn-sm">Pending</button> 
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm">Complete</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">Cancel</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -445,6 +377,15 @@
                                 </td>
                                 <td class="text-xs font-weight-bold">
                                     <span class="my-2 text-xs">$164.90</span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-info btn-sm">Pending</button> 
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm">Complete</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">Cancel</button>
                                 </td>
                             </tr>
                             <tr>
@@ -483,6 +424,15 @@
                                 <td class="text-xs font-weight-bold">
                                     <span class="my-2 text-xs">$23.90</span>
                                 </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-info btn-sm">Pending</button> 
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm">Complete</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">Cancel</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -498,7 +448,7 @@
     const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
         searchable: true,
         fixedHeight: false,
-        perPageSelect: false
+        perPage: 5
     });
 
     document.querySelectorAll(".export").forEach(function(el) {

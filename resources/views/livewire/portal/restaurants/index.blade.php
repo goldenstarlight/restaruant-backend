@@ -30,66 +30,74 @@
                                 </div>
                             </div>
                             <div class="table-responsive">
-                            <table class="table align-items-center mb-0" id="restaurants-list">
-                                <thead>
-                                    <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            No
-                                        </th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Imag
-                                        </th> 
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                             Name
-                                        </th> 
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Main food
-                                        </th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Address
-                                        </th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Phone
-                                        </th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Owner
-                                        </th>
-                                        <th colspan="2">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php $i = 1; @endphp
-                                    @foreach($restaurants as $restaurant)
-                                        @if(Auth::user()->id == $restaurant->user_id)
-                                            @continue;
-                                        @endif
+                                @if(!!session('status'))
+                                    <div class="alert alert-danger alert-dismissible text-white" id="alert" role="alert">
+                                        {{session('status')}}
+                                        <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                @endif
+                                <table class="table align-items-center mb-0" id="restaurants-list">
+                                    <thead>
                                         <tr>
-                                            <td>{{$i++}}</td>
-                                            <td><img src="{{$restaurant->logo}}"} style="width:100px"/></td>
-                                            <td>{{$restaurant->name}}</td>
-                                            <td>{{$restaurant->main_food}}</td>
-                                            <td>{{$restaurant->address}}</td>
-                                            <td>{{$restaurant->phone}}</td>
-                                            <td>{{$restaurant->user->first_name . ' ' . $restaurant->user->first_name}}</td>
-                                            <td>
-                                                <a href="{{route('restaurants', [$restaurant->id, 'edit'])}}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit Restaurant">
-                                                    <i class="fas fa-user-edit text-secondary" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <form action="{{route('delete-restaurant',  $restaurant->id)}}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')        
-                                                    <button href="" class="mx-3 border-0" data-bs-toggle="tooltip" data-bs-original-title="Delete user">
-                                                        <i class="fas fa-trash text-secondary" aria-hidden="true"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr> 
-                                    @endforeach
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                No
+                                            </th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Imag
+                                            </th> 
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Name
+                                            </th> 
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Main food
+                                            </th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Address
+                                            </th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Phone
+                                            </th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Owner
+                                            </th>
+                                            <th colspan="2">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php $i = 1; @endphp
+                                        @foreach($restaurants as $restaurant)
+                                            @if(Auth::user()->id == $restaurant->user_id)
+                                                @continue;
+                                            @endif
+                                            <tr>
+                                                <td>{{$i++}}</td>
+                                                <td><img src="{{$restaurant->logo}}"} style="width:100px"/></td>
+                                                <td>{{$restaurant->name}}</td>
+                                                <td>{{$restaurant->main_food}}</td>
+                                                <td>{{$restaurant->address}}</td>
+                                                <td>{{$restaurant->phone}}</td>
+                                                <td>{{$restaurant->user->first_name . ' ' . $restaurant->user->first_name}}</td>
+                                                <td>
+                                                    <a href="{{route('restaurants', [$restaurant->id, 'edit'])}}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit Restaurant">
+                                                        <i class="fas fa-user-edit text-secondary" aria-hidden="true"></i>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <form action="{{route('delete-restaurant',  $restaurant->id)}}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')        
+                                                        <button href="" class="mx-3 border-0" data-bs-toggle="tooltip" data-bs-original-title="Delete user">
+                                                            <i class="fas fa-trash text-secondary" aria-hidden="true"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr> 
+                                        @endforeach
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
                             </div>
                             <hr class="horizontal dark">
                         </div>

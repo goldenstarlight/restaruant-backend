@@ -81,6 +81,7 @@
     <link id="pagestyle" href="../../assets/css/soft-ui-dashboard2.css" rel="stylesheet" />
     <!-- Quill -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/css/chat.css">
     <!-- Alpine -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 

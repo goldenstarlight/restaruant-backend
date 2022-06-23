@@ -70,6 +70,13 @@
                                 <span class="sidenav-normal"> Foods </span>
                             </a>
                         </li>
+                        <li class="nav-item {{ Route::currentRouteName() == 'orders' ? 'active' : '' }}">
+                            <a class="nav-link {{ Route::currentRouteName() == 'orders' ? 'active' : '' }}"
+                                href="{{ route('orders') }}">
+                                <span class="sidenav-mini-icon"> U </span>
+                                <span class="sidenav-normal"> Orders </span>
+                            </a>
+                        </li>
                         <li class="nav-item {{ Route::currentRouteName() == 'portal-statement' ? 'active' : '' }}">
                             <a class="nav-link {{ Route::currentRouteName() == 'portal-statement' ? 'active' : '' }}"
                                 href="{{ route('portal-statement') }}">
@@ -83,6 +90,14 @@
                                 href="{{ route('portal-notifications') }}">
                                 <span class="sidenav-mini-icon"> N </span>
                                 <span class="sidenav-normal"> Notifications </span>
+                            </a>
+                        </li>
+                        <li
+                            class="nav-item {{ Route::currentRouteName() == 'chats' ? 'active' : '' }}">
+                            <a class="nav-link {{ Route::currentRouteName() == 'chats' ? 'active' : '' }}"
+                                href="{{ route('chats') }}">
+                                <span class="sidenav-mini-icon"> N </span>
+                                <span class="sidenav-normal"> Chats </span>
                             </a>
                         </li>
 

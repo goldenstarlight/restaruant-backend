@@ -30,6 +30,15 @@
                                 </div>
                             </div>
                             <div class="table-responsive">
+                                @if(!!session('status'))
+                                    <div class="alert alert-danger alert-dismissible text-white" id="alert" role="alert">
+                                        {{session('status')}}
+                                        <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                @endif
+
                                 <table class="table align-items-center mb-0" id="users-list">
                                     <thead>
                                         <tr>
@@ -95,28 +104,31 @@
 </div>
 <script src="../../../assets/js/plugins/datatables.js"></script>
 <script>
-  if (document.getElementById('users-list')) {
-    const dataTableSearch = new simpleDatatables.DataTable("#users-list", {
-      searchable: true,
-      fixedHeight: false,
-      perPage: 5
-    });
+    setTimeout(() => {
+        document.getElementById('alert').style.display = 'none';
+    }, 5000);
+    if (document.getElementById('users-list')) {
+        const dataTableSearch = new simpleDatatables.DataTable("#users-list", {
+            searchable: true,
+            fixedHeight: false,
+            perPage: 5
+        });
 
-    document.querySelectorAll(".export").forEach(function(el) {
-      el.addEventListener("click", function(e) {
-        var type = el.dataset.type;
+        document.querySelectorAll(".export").forEach(function(el) {
+            el.addEventListener("click", function(e) {
+            var type = el.dataset.type;
 
-        var data = {
-          type: type,
-          filename: "soft-ui-" + type,
-        };
+            var data = {
+                type: type,
+                filename: "soft-ui-" + type,
+            };
 
-        if (type === "csv") {
-          data.columnDelimiter = "|";
-        }
+            if (type === "csv") {
+                data.columnDelimiter = "|";
+            }
 
-        dataTableSearch.export(data);
-      });
-    });
-  };
+            dataTableSearch.export(data);
+            });
+        });
+    };
 </script>

@@ -1,3 +1,4 @@
+@if(1 == 0)
 <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent mt-4">
     <div class="container">
         <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="{{ route('default') }}">
@@ -1637,13 +1638,7 @@
                     </li>
               </ul>
               @endif
-                <ul class="navbar-nav d-lg-block d-none">
-                    <li class="nav-item">
-                        <a href="https://www.creative-tim.com/product/soft-ui-dashboard-pro-laravel" target="_blank"
-                            class="btn btn-sm  {{ in_array(request()->route()->getName(), ['pricing']) ? 'bg-white' : 'bg-gradient-primary' }} btn-round mb-0 me-1"
-                            onclick="smoothToPricing('pricing-soft-ui')">Buy Now</a>
-                    </li>
-                </ul>
         </div>
     </div>
 </nav>
+@endif

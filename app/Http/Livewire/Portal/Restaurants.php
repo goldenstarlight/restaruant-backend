@@ -66,8 +66,14 @@ class Restaurants extends Component
     }
 
     public function delete($id) {
-        Restaurant::find($id)->delete();
-        return redirect()->intended('/restaurants');
+        try {
+            $status = 'Restaurant deleted successfully!';
+            Restaurant::find($id)->delete();
+        } catch (\Throwable $th) {
+            $status = 'Sorry, we can not delete this restaurant becuase he is owner of foods. If you want to delete this restaurant you need to check food. Thank you!';
+        }
+        
+        return redirect()->intended('/restaurants')->with('status', $status);
     }
 
     public function render(Request $request)

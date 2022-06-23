@@ -16,7 +16,7 @@ class Users extends Component
     public $last_name = '';
     public $password = '';
     public $role_id = '';
-
+    public $err = '';
     public $roles;
 
     public function rules() {
@@ -54,6 +54,7 @@ class Users extends Component
     public function edit(Request $request, $id) {
         $user = User::find($id)->get();
     }
+    
 
     public function update(Request $request, $id) 
     {
@@ -81,10 +82,16 @@ class Users extends Component
     }
 
     public function delete($id) {
-        User::find($id)->delete();
-        return redirect()->intended('/portal-users');
+        try {
+            $status = 'User deleted successfully!';
+            User::find($id)->delete();
+        } catch (\Throwable $th) {
+            $status = 'Sorry, we can not delete this user becuase he is owner of restaurants. If you want to delete this user you need to check restaurant. Thank you!';
+        }
+        
+        return redirect()->intended('/portal-users')->with('status', $status);
     }
-
+    
     public function render(Request $request)
     {
         if ($request->id == 'add') {
@@ -95,7 +102,7 @@ class Users extends Component
             return view('livewire.portal.users.edit', compact('user'));
         } else {
             $users = $this->allUsers($request);
-            return view('livewire.portal.users.index', compact('users'));
+            return view('livewire.portal.users.index', compact(['users']));
         }
     }
 }

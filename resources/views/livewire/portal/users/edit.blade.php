@@ -3,7 +3,13 @@
         <div class="col-12 col-lg-12 col-md-12 d-flex flex-column mx-lg-0 mx-auto">
             <div class="card card-plain">
                 <div class="card-header pb-0 text-left">
-                    <h4 class="font-weight-bolder">Add user</h4>
+                    <h4 class="font-weight-bolder">
+                        @if($user->id == Auth::user()->id)
+                            My Account
+                        @else
+                            Edit user
+                        @endif
+                    </h4>
                 </div>
                 <div class="card-body pb-3">
                     <form action="{{route('update-user', $user->id)}}" method="post">
@@ -43,8 +49,9 @@
                         <div class="mb-3">
                             <input type="password" class="form-control" name='password' placeholder="Password" autocomplete="off">
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0">Register</button>
+                        <div class="d-flex justify-content-around">
+                            <a href="{{route('portal-users')}}" class="btn bg-gradient-dark w-40 mt-4 mb-0">cancel</a>    
+                            <button type="submit" class="btn bg-gradient-primary w-40 mt-4 mb-0">Change</button>
                         </div>
                     </form>
                 </div>

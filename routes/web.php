@@ -99,6 +99,7 @@ use App\Http\Livewire\Portal\Login as PortalLogin;
 use App\Http\Livewire\Portal\Statement as PortalStatement;
 use App\Http\Livewire\Portal\Restaurants;
 use App\Http\Livewire\Portal\Projects;
+use App\Http\Livewire\Portal\Chats;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -123,6 +124,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/portal-dashboard', PortalDashboard::class)->name('portal-dashboard');
     Route::get('/portal-users/{id?}/{type?}', PortalUsers::class)->name('portal-users');
     Route::post('/portal-users', [PortalUsers::class, 'store'])->name('add-user');
+    Route::get('/user-back', [PortalUsers::class, 'back'])->name('back-user');
     Route::put('/portal-users/{id}', [PortalUsers::class, 'update'])->name('update-user');
     Route::delete('/portal-users/{id}', [PortalUsers::class, 'delete'])->name('delete-user');
 
@@ -138,6 +140,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/portal-notifications', PortalNotifications::class)->name('portal-notifications');
     Route::get('/portal-statement', PortalStatement::class)->name('portal-statement');
+    Route::get('/chats', Chats::class)->name('chats');
 
     //Theme
     Route::get('/dashboard-default', DashboardDefault::class)->name('default');
@@ -181,7 +184,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/ecommerce-products-product-page', ProductPage::class)->name('product-page');
     Route::get('/ecommerce-products-products-list', ProductsList::class)->name('products-list');
 
-    Route::get('/ecommerce-orders-order-list', OrderList::class)->name('order-list');
+    Route::get('/ecommerce-orders-order-list', OrderList::class)->name('orders');
     Route::get('/ecommerce-orders-order-details', OrderDetails::class)->name('order-details');
 
     Route::get('/authentication-error404', Error404::class)->name('404');

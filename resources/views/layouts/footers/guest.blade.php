@@ -1,3 +1,4 @@
+  @if(1 == 0)
   <footer class="footer py-5">
       <div class="container">
           <div class="row">
@@ -61,3 +62,4 @@
           </div>
       </div>
   </footer>
+  @endif
