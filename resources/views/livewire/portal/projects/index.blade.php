@@ -66,7 +66,7 @@
                                 <tbody>
                                     @foreach($projects as $project)
                                         <tr>
-                                            <td>{{$loop->index}}</td>
+                                            <td>{{$loop->index + 1}}</td>
                                             <td>
                                                 <img src="{{$project->img_src}}" alt="" style="width:50px">
                                             </td>

@@ -13,8 +13,8 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#dashboardsExamples"
-                    class="nav-link  {{ strpos(Request::route()->uri(), 'dashboard') === false ? '' : 'active' }}"
-                    aria-controls="dashboardsExamples" role="button" aria-expanded="false">
+                    class="nav-link "
+                    aria-controls="dashboardsExamples" role="button" aria-expanded="true">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
@@ -39,7 +39,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Portal</span>
                 </a>
-                <div class="collapse {{ strpos(Request::route()->uri(), 'dashboard') === false ? '' : 'show' }}"
+                <div class="collapse show"
                     id="dashboardsExamples">
                     <ul class="nav ms-4 ps-3">
                         <li class="nav-item {{ Route::currentRouteName() == 'portal-dashboard' ? 'active' : '' }}">
