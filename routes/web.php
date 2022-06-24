@@ -111,13 +111,12 @@ use App\Http\Livewire\Portal\Chats;
 |
 */
 
-Route::get('/', Login::class)->name('login');
+Route::get('/', Login::class);
 
 Route::get('/login', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
 Route::get('/forgot-password', ForgotPassword::class)->name('forgot-password');
 Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')->middleware('signed');
-
 
 Route::middleware('auth')->group(function () {
     //Project
@@ -156,6 +155,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/pages-users-reports', Reports::class)->name('reports');
     Route::get('/pages-users-new', NewUser::class)->name('new-user');
+    Route::get('/messages', [Chats::class, 'fetchMessages']);
+    Route::post('/messages', [Chats::class, 'sendMessage']);
 
     Route::get('/pages-account-settings', Settings::class)->name('settings');
     Route::get('/pages-account-billing', Billing::class)->name('billing');
