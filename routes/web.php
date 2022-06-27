@@ -111,7 +111,7 @@ use App\Http\Livewire\Portal\Chats;
 |
 */
 
-Route::get('/', Login::class);
+Route::get('/', Login::class)->name('login');
 
 Route::get('/login', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
